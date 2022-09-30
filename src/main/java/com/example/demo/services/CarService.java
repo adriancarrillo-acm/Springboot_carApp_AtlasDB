@@ -16,7 +16,7 @@ public class CarService {
     private final CarRepo carRepo;
 
     public void processRequest(CarBean carBean){
-        String carMake = carBean.getBrand().toString().toUpperCase();
+        String carMake = carBean.getBrand().dbFriendlyName();
         List<Car> carList = carRepo.findCarByCarMake(carMake).orElse(new ArrayList<>());
         carBean.setCars(carList);
     }

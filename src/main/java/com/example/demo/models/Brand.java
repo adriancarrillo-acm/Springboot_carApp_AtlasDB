@@ -1,9 +1,19 @@
 package com.example.demo.models;
 
 public enum Brand {
-    FORD,
-    GMC,
-    FERRARI,
-    PORSCHE,
-    GM
+    //MYBRAND("whatever value you want"),
+    FORD("Ford"),
+    GMC("GMC"),
+    FERRARI("Ferrari"),
+    PORSCHE("Porsche"),
+    VW("Volkswagen"),
+    VOLKSWAGEN("Volkswagen"),
+    GM("GM");
+    private String brand;
+    Brand(String brand){
+        this.brand = brand;
+    }
+    public String dbFriendlyName(){
+        return this.brand;
+    }
 }
