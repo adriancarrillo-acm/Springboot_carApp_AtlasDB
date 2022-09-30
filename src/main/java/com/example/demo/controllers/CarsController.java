@@ -71,7 +71,7 @@ public class CarsController {
     @GetMapping(value = "/getCars", params = "carColor")
     public List<Car> getColor(@RequestParam("carColor") String carColor) throws Exception {
         if(carRepo.findCarByCarColor(carColor).isEmpty()){
-            throw new Exception("No Cars of That Color Found!!!");
+            throw new Exception("No Cars of That Color Found!!!!");
         }
         return carRepo.findCarByCarColor(carColor);
     }
