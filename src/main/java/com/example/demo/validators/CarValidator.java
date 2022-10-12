@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class CarValidator {
     public void validateBrand(CarBean carBean) throws IllegalBrandException {
-        if(!carBean.getBrand().equals(Brand.GM) && !carBean.getBrand().equals(Brand.PORSCHE)){
+        if( !carBean.getBrand().equals(Brand.CHEVY) && !carBean.getBrand().equals(Brand.CHEVROLET) && !carBean.getBrand().equals(Brand.PORSCHE)){
             // TODO throw custom exception IllegalBrandException
-            throw new IllegalBrandException("Brand must be GM or GMC! You used: " + carBean.getBrand());
+            throw new IllegalBrandException("Brand must be Chevy or Porsche! You used: " + carBean.getBrand());
         }
     }
 }
