@@ -78,6 +78,8 @@ public class CarsController {
 
     @PostMapping("/addCar")
     public String addCar(@RequestBody Car car){
+        CarBean carBean = new CarBean();
+        carMapper.brandMapper(carBean, car.getCarMake());
         carRepo.save(car);
         return "Added Car!   Details: " + car.getCarMake() + " " + car.getCarModel();
     }
